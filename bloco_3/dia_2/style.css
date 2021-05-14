@@ -1,24 +1,23 @@
 h1{
-    font-size: 65px;
-    font-family: sans-serif;
-    color: orange
+  font-size: 65px;
+  font-family: sans-serif;
+  color: orange
 }
 ul{
-    font-style: italic;
-    font-size: 30px;
-    background-color: gray;
-    line-height: 95px;
-    
+  font-style: italic;
+  font-size: 30px;
+  background-color: gray;
+  line-height: 95px;
+  
 }
 .ulep{
-    color: black
+  color: black
 }
 p{
-  font-weight: 600;
-  font-size: 3em;
+font-weight: 600;
+font-size: 3em;
 }
 body{
-  font-size: 16px;
-  text-align: center;
-  background-color:cornflowerblue;
-}
+font-size: 16px;
+text-align: center;
+background-color:cornflowerblue;
