@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,200;1,200&display=swap');
+body{
+    font-family: 'Newsreader', serif;
+    background-color: rgba(180,245,239,255)
+}
+h2{
+    padding-left: 10px;
+}
 .header{
     background-color: sandybrown;
     border: 5px solid red;
@@ -13,9 +21,9 @@
     margin-left: 200px;
     padding: 5px 10px;
 }
-
 .nav .links li a{
     text-decoration: none;
+    font-weight: 1000;
 }
 .nav .links li a:hover{
     color: black;
@@ -24,4 +32,61 @@
     background-color: sandybrown;
     border: 5px solid red;
     margin-top: 5px;
+}
+.main{
+}
+.facts{
+    background-color: sandybrown;
+    border: 5px solid red;
+    color: blueviolet;
+    font-size: 22px;
+    margin-top: 5px;
+}
+#facts{
+    padding-top: 10px;
+    padding-bottom:8px;
+    text-align: center;
+    font-size: 30px;
+    font-style:normal;
+}
+#color1{
+    color: purple;
+
+}
+#color2{
+    color: red;
+}
+#color3{
+    color: orangered;
+}
+#color4{
+    color: green;
+}
+#color5{
+    color: blue;
+}
+.facts ul span{
+    font-size: 35px;
+}
+.facts ul{
+    list-style:square;
+}
+.facts ul li{
+    font-weight:1000;
+}
+#general-informations .table-general-informations{
+    width: 98%;
+    margin: auto;
+}
+#general-informations .table-general-informations,th,td{
+border: 1px solid black;
+border-collapse: collapse;
+}
+#general-informations .table-general-informations th,td{
+    padding-top: 5px;
+    text-align: center;
+}
+#general-informations .table-general-informations td{
+        font-weight: 1000;
+        font-size: 20px;
 }
