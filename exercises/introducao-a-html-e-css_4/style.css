@@ -4,3 +4,24 @@
     color: blueviolet;
     text-align: center; 
 }
+.nav .links li{
+    background-color:saddlebrown;
+    border-radius: 5px;
+    color: red;
+    display: inline;
+    font-size:20px ;
+    margin-left: 200px;
+    padding: 5px 10px;
+}
+
+.nav .links li a{
+    text-decoration: none;
+}
+.nav .links li a:hover{
+    color: black;
+}
+.nav{
+    background-color: sandybrown;
+    border: 5px solid red;
+    margin-top: 5px;
+}
