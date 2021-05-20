@@ -1,0 +1,10 @@
+const name = "Gustavo";
+const birthCity = "São Paulo";
+let birthYear = 2000;
+console.log(name);
+console.log(birthCity);
+console.log(birthYear);
+birthYear = 2030;
+console.log(birthYear);
+birthCity = "Rio de Janeiro";
+console.log(birthCity);
