@@ -1,7 +1,0 @@
-div:hover{
-    border-style: solid;
-    border-color: black;
-}
-div::first-line{
-    color:blue;
-}
