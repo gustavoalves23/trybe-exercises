@@ -1,8 +1,6 @@
 //Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
 function repitedInteger (numbers){
-    let higherNumber = numbers[0];
     let repetitionTimes = 0;
-    let repetitionTimesHigher = 0;
 
     for (let index in numbers){
         let number = numbers[index];
@@ -10,14 +8,12 @@ function repitedInteger (numbers){
             if (number === numbers[index2]){
                 repetitionTimes += 1;
         }
-        if (repetitionTimes > repetitionTimesHigher){
-            repetitionTimesHigher = repetitionTimes;
-            higherNumber = number;
-        }   
+        if (repetitionTimes >= 3){
+            return("Não pode");
+        }
     }
     repetitionTimes = 0;
     }
-    return(higherNumber);
 }
 
-console.log(repitedInteger([2, 3, 2, 5, 8, 2, 3]));
+console.log(repitedInteger([1, 2, 3, 4, 5, 6, 7, 8, 9,9,9]));

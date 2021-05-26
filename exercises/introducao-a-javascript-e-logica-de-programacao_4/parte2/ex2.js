@@ -5,7 +5,7 @@ function higherIndex(list) {
         higherValue = indice;
       }
     }
-    return higherValue;
+    return list[higherValue];
   }
   
   console.log(higherIndex([2, 3, 6, 7, 10, 1]));
