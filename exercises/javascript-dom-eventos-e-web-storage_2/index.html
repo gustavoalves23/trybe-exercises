@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+        //ex1
+      let son1 = document.createElement('h1');
+      son1.innerText = "Exercício 5.2 - JavaScript DOM";
+      document.querySelector("body").appendChild(son1);
+        //ex2
+      let son2 = document.createElement("div");
+      son2.className = "main-content";
+      document.querySelector("body").appendChild(son2);
+        //ex3
+        let son3 = document.createElement("div");
+      son3.className = "center-content";
+      document.querySelector(".main-content").appendChild(son3);
+       //ex4
+       let sonOfCenterContent = document.createElement('p');
+       sonOfCenterContent.innerText = "BananaSplit";
+       document.querySelector(".center-content").appendChild(sonOfCenterContent);
+       //ex5
+       let leftContentDiv = document.createElement('div');
+       leftContentDiv.className = "left-content";
+       document.querySelector('.main-content').appendChild(leftContentDiv);
+       //ex6
+       let rightContentDiv = document.createElement('div');
+       rightContentDiv.className = "right-content";
+       document.querySelector('.main-content').appendChild(rightContentDiv);
+       //ex7
+       let img = document.createElement("img");
+       img.className = "small-image";
+       img.src = "https://picsum.photos/200"
+       document.querySelector(".left-content").appendChild(img);
+       //ex8
+       let unorderedList1 = document.createElement("ul");
+       document.querySelector(".right-content").appendChild(unorderedList1);
+       unorderedList1li = [];
+       for (let index = 0; index < 10; index += 1){
+        unorderedList1li[index] = document.createElement("li");
+        unorderedList1li[index].innerHTML = [index + 1];
+        document.querySelector("ul").appendChild(unorderedList1li[index]);
+       }
+       //ex9
+       let h3TagsLista = [];
+       for (let index = 0; index < 3; index += 1){
+        h3TagsLista[index] = document.createElement("h3");
+        h3TagsLista[index].innerText = [index];
+        document.querySelector(".main-content").appendChild(h3TagsLista[index]);
+       }
+
+        //ex1pt2
+        document.querySelector("h1").className = "title";
+        
+        //ex2pt2
+        for (let index = 0; index < 3; index += 1){
+            h3TagsLista[index].className = "description";
+        }
+        //ex3pt2
+        document.querySelector(".main-content").removeChild(document.querySelector(".left-content"));
+        //ex4pt2
+        document.getElementsByClassName("right-content")[0].style.marginRight = "auto";
+        //ex5pt2
+        document.getElementsByClassName("center-content")[0].parentElement.style.backgroundColor = "green";
+        //ex6pt2
+        for (let index = 1; index < 3; index += 1){
+            document.querySelector('ul').removeChild(document.querySelectorAll("li")[unorderedList1li.length - [index]])
+        }
+    </script>
+  </body>
+</html>
