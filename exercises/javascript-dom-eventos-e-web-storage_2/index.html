@@ -86,6 +86,16 @@
        img.className = "small-image";
        img.src = "https://picsum.photos/200"
        document.querySelector(".left-content").appendChild(img);
+       //ex8
+       let unorderedList1 = document.createElement("ul");
+       document.querySelector(".right-content").appendChild(unorderedList1);
+       unorderedList1li = [];
+       for (let index = 1; index < 11; index += 1){
+        unorderedList1li[index] = document.createElement("li");
+        unorderedList1li[index].innerHTML = [index];
+        document.querySelector("ul").appendChild(unorderedList1li[index]);
+       }
+
     </script>
   </body>
 </html>
