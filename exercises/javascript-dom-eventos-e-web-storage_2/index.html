@@ -90,9 +90,9 @@
        let unorderedList1 = document.createElement("ul");
        document.querySelector(".right-content").appendChild(unorderedList1);
        unorderedList1li = [];
-       for (let index = 1; index < 11; index += 1){
+       for (let index = 0; index < 10; index += 1){
         unorderedList1li[index] = document.createElement("li");
-        unorderedList1li[index].innerHTML = [index];
+        unorderedList1li[index].innerHTML = [index + 1];
         document.querySelector("ul").appendChild(unorderedList1li[index]);
        }
        //ex9
@@ -116,6 +116,10 @@
         document.getElementsByClassName("right-content")[0].style.marginRight = "auto";
         //ex5pt2
         document.getElementsByClassName("center-content")[0].parentElement.style.backgroundColor = "green";
+        //ex6pt2
+        for (let index = 1; index < 3; index += 1){
+            document.querySelector('ul').removeChild(document.querySelectorAll("li")[unorderedList1li.length - [index]])
+        }
     </script>
   </body>
 </html>
