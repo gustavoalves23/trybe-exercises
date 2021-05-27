@@ -95,7 +95,13 @@
         unorderedList1li[index].innerHTML = [index];
         document.querySelector("ul").appendChild(unorderedList1li[index]);
        }
-
+       //ex9
+       let h3TagsLista = [];
+       for (let index = 0; index < 3; index += 1){
+        h3TagsLista[index] = document.createElement("h3");
+        h3TagsLista[index].innerText = [index];
+        document.querySelector(".main-content").appendChild(h3TagsLista[index]);
+       }
     </script>
   </body>
 </html>
