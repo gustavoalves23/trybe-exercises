@@ -5,7 +5,7 @@
   <title>Document</title>
 </head>
 <body>
-  <form action="" method="get">
+  <form action="" method="get" id="form">
     <fieldset>
       <label for="name">Nome:</label>
       <input type="text" id="name" required>
@@ -46,8 +46,21 @@
       <br>
       <label for="job">Cargo</label>
       <input type="text" id="job" maxlength="40" required>
+      <br>
+      <br>
+      <label for="jobDescription">Descrição do Cargo:</label>
+      <input type="text" id="jobDescription" maxlength="500" required>
+      <br>
+      <br>
+      <label for="date">Data de início</label>
+      <input type="text" id="date" required>
+      <br>
+      <br>
+      <button type="submit">A</button>
     </fieldset>
   </form>
+
+  <button onclick="formSubmit()">Teste</button>
   <script src="script.js"></script>
 </body>
 </html>

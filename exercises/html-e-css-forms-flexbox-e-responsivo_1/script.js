@@ -28,6 +28,7 @@ let states = {
   'TO': 'Tocantins'
 }
 
+const form = document.getElementById('form');
 function statesAdder() {
   let statesFromObject = Object.values(states);
   let stateList = document.getElementById('states');
@@ -38,3 +39,7 @@ function statesAdder() {
   }
 }
 statesAdder();
+
+function formSubmit() {
+  form.submit();
+}
