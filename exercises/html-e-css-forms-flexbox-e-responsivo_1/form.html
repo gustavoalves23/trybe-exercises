@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" method="get" id="form">
+    <fieldset>
+      <label for="name">Nome:</label>
+      <input type="text" id="name" required>
+      <br>
+      <br>
+      <label for="email">E-mail:</label>
+      <input type="email" name="email" id="email" required>
+      <br>
+      <br>
+      <label for="CPF">CPF:</label>
+      <input type="text" id="CPF" required>
+      <br>
+      <br>
+      <label for="adress">Endereço:</label>
+      <input type="text" id="adress" required>
+      <br>
+      <br>
+      <label for="city">Cidade:</label>
+      <input type="text" id="city" required>
+      <br>
+      <br>
+      <label for="states">Estados:</label>
+      <select name="states" id="states" required></select>
+      <br>
+      <br>
+      <label for="type">Tipo:</label>
+      <input type="radio" name="type" id="type1" required>
+      <label for="type1">Casa</label>
+      <input type="radio" name="type" id="type2" required>
+      <label for="type2">Apartamento</label>
+    </fieldset>
+    <br>
+    <br>
+    <fieldset style="padding-top: 30px;">
+      <label for="resume">Resumo do currículo:</label>
+      <textarea style="width: 100%;" name="resume" id="resume" cols="30" rows="10" maxlength="1000" required></textarea>
+      <br>
+      <br>
+      <label for="job">Cargo</label>
+      <input type="text" id="job" maxlength="40" required>
+      <br>
+      <br>
+      <label for="jobDescription">Descrição do Cargo:</label>
+      <input type="text" id="jobDescription" maxlength="500" required>
+      <br>
+      <br>
+      <label for="date">Data de início</label>
+      <input type="text" id="date" required>
+      <br>
+      <br>
+      <button type="submit">A</button>
+    </fieldset>
+  </form>
+
+  <button onclick="formSubmit()">Teste</button>
+  <script src="script.js"></script>
+</body>
+</html>
