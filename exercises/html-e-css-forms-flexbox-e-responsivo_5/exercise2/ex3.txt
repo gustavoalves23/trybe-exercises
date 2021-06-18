@@ -1,0 +1,26 @@
+@media screen and (min-width: 1025px) {
+    html {
+        display: flex;
+        justify-content: center;
+    }
+    body {
+        font-size: 25px;
+        background-color: lightseagreen;
+        padding: 25px;
+        max-width: 1500px;
+        
+    }
+    h1 {
+        font-size: 25px;
+        color: purple;
+    }
+    h2 {
+        font-size: 20px;
+        color: rebeccapurple;
+    }
+
+    .title {
+        font-size:  80px;
+        text-align: center;
+    }
+}
