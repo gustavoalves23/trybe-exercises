@@ -10,5 +10,15 @@ const newEmployees = () => {
     }
     return employees;
   };
+/////////////////////////////////////////////////////////////////////////////////////
+const numberTest = (betNumber, rightNumber) => betNumber === rightNumber;
 
-  console.log(newEmployees());
+const betReturn = (number, testFunction) => {
+    let randomNumber = Math.ceil(5 * Math.random());
+    if  (testFunction(number, randomNumber)) {
+        return `Parabéns você ganhou random: ${randomNumber} myNumber: ${number}`;
+    }
+    return `Tente novamente random: ${randomNumber} myNumber: ${number}`;
+}
+
+console.log (betReturn(2, numberTest));
