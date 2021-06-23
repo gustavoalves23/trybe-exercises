@@ -21,4 +21,23 @@ const betReturn = (number, testFunction) => {
     return `Tente novamente random: ${randomNumber} myNumber: ${number}`;
 }
 
-console.log (betReturn(2, numberTest));
+/////////////////////////////////////////////////////////////////////////////////////
+const rightAnswers = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const studentAnswers = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+const evaluateExam = (respostasCertas, respostasDoAluno) => {
+    let score = 0;
+    for (let index = 0; index < respostasCertas.length; index += 1) {
+        if (respostasCertas[index] === respostasDoAluno[index] && respostasDoAluno[index]!== 'N.A') {
+            score += 1;
+        }
+        if (respostasCertas[index] !== respostasDoAluno[index] && respostasDoAluno[index]!== 'N.A') {
+            score -= 0.5;
+        }
+    }
+    return score;
+}
+
+const examChecker = (respostasCertas, respostasDoAluno, calculadora) => calculadora(respostasCertas,respostasDoAluno);
+
+console.log(examChecker(rightAnswers, studentAnswers, evaluateExam));
