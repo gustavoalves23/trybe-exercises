@@ -1,0 +1,29 @@
+.pokemon-div {
+  display: flex;
+  background-color: grey;
+  margin: 20px;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.pokemon-div:hover {
+  background-color: blue;
+}
+
+.pokemon-div img {
+  width: 200px;
+}
+
+.pokedex {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
