@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Informações do primeiro Reducer:</h1>
+      <p>Nome: <span id="nome-1">Rodrigo</span></p>
+      <p>Sobrenome: <span id="sobrenome-1">Santos da Silva</span></p>
+      <p>Endereço: <span id="endereco-1">Rua Soldado Mathias, 765</span></p>
+      <p>Cidade: <span id="cidade-1">Belo Horizonte</span></p>
+    </div>
+    <div id="container">
+      <h1>Informações do segundo Reducer:</h1>
+      <p>Nome: <span id="nome-2">Bruna</span></p>
+      <p>Sobrenome: <span id="sobrenome-2">Santana Oliveira</span></p>
+      <p>Endereço: <span id="endereco-2">Rua Holanda, 332</span></p>
+      <p>Cidade: <span id="cidade-2">São Paulo</span></p>
+    </div>
+    <script>
+      const ESTADO_INICIAL_1 = {
+        nome: 'Rodrigo',
+        sobrenome: 'Santos da Silva',
+        endereco: 'Rua Soldado Mathias, 765',
+        cidade: 'Belo Horizonte',
+      };
+
+      const ESTADO_INICIAL_2 = {
+        nome: 'Bruna',
+        sobrenome: 'Santana Oliveira',
+        endereco: 'Rua Holanda, 332',
+        cidade: 'São Paulo',
+      };
+
+      const person1 = {
+        nome: 'Gustavo',
+        sobrenome: 'Alves Miyazaki',
+        endereco: 'Rua batatinhas, 123',
+        cidade: 'São Paulo',
+      }
+
+      const person2 = {
+        nome: 'Juliana',
+        sobrenome: 'Alves Miyazaki',
+        endereco: 'Rua batatinhas, 321',
+        cidade: 'São Paulo',
+      }
+
+      const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
+        switch (action.type) {
+          case 'person1':
+            return action.person;
+          default:
+            return state;
+        }
+      };
+
+      const meuSegundoReducer = (state = ESTADO_INICIAL_2, action) => {
+        switch (action.type) {
+          case 'person2':
+            return action.person;
+          default:
+            return state;
+        }
+      };
+
+      const combinedReducers = Redux.combineReducers({
+        meuPrimeiroReducer,
+        meuSegundoReducer,
+      })
+
+      const actionName1 = () => ({person: { ...person1 }, type: 'person1'});
+      const actionName2 = () => ({person: { ...person2 }, type: 'person2'});
+      const store = Redux.createStore(combinedReducers);
+
+      window.onload = () => {
+        setTimeout(() => {
+          store.dispatch(actionName1());
+          store.dispatch(actionName2());
+        }, 3000);
+      };
+
+      store.subscribe(() => {
+        const name1 = document.getElementById('nome-1');
+        const name2 = document.getElementById('nome-2');
+        const lastname1 = document.getElementById('sobrenome-1');
+        const lastname2 = document.getElementById('sobrenome-2');
+        name1.innerHTML = store.getState().meuPrimeiroReducer.nome;
+        name2.innerHTML = store.getState().meuSegundoReducer.nome;
+        lastname1.innerHTML = store.getState().meuPrimeiroReducer.sobrenome;
+        lastname2.innerHTML = store.getState().meuSegundoReducer.sobrenome;
+      })
+
+    </script>
+  </body>

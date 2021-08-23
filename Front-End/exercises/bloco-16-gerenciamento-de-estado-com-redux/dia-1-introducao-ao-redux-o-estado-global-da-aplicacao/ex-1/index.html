@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        height: 50px;
+        width: 200px;
+      }
+
+      #container p {
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p>Color: <span id="value">white</span></p>
+      <button id="previous">Previous color</button>
+      <button id="next">Next color</button>
+      <button id="random-color">Random color</button>
+    </div>
+    <script>
+      const ESTADO_INICIAL = {
+        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+        index: 0,
+      };
+
+      const previousButton = document.getElementById('previous');
+      const nextButton = document.getElementById('next');
+      const value = document.getElementById('value');
+      const container = document.getElementById('container');
+      const randomColorButton = document.getElementById('random-color');
+      
+      const reducer = (state = ESTADO_INICIAL, action) => {
+        switch (action.type) {
+          case 'NEXT_COLOR':
+            return {
+              ...state,
+              index: action.index,
+            };
+          case 'PREVIOUS_COLOR':
+            return {
+              ...state,
+              index: action.index,
+            }
+            case 'RANDOM_COLOR':
+            return {
+              ...state,
+              index: action.index,
+              colors: action.colors,
+            }
+          default:
+            return state;
+        }
+      }
+
+      const store = Redux.createStore(reducer);
+
+      function criarCor() {
+    const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+    let cor = '#';
+    const aleatorio = () => Math.floor(Math.random() * oneChar.length);
+    for (let i = 0; i < 6; i += 1) {
+        cor += oneChar[aleatorio()];
+    }
+    return cor;
+}
+
+      const nextColor = () => {
+        const actualindex = store.getState().index;
+        const actualIndexLength = store.getState().colors.length;
+        console.log(actualindex);
+        console.log(actualIndexLength);
+        if (actualindex < actualIndexLength - 1) {
+              return {
+            type: 'NEXT_COLOR',
+            index: actualindex + 1,
+          }
+        }
+      }
+
+      const previousColor = () => {
+        const actualindex = store.getState().index;
+        console.log(actualindex);
+        const actualIndexLength = store.getState().colors.length;
+        console.log(actualIndexLength);
+        if (actualindex > 0) {
+              return {
+            type: 'PREVIOUS_COLOR',
+            index: actualindex - 1,
+          }
+        }
+      }
+
+      const randomColor = () => {
+        const actualColors = store.getState().colors;
+        const randomColor = criarCor();
+        actualColors.push(randomColor);
+        const index = actualColors.length - 1;
+        return {
+            type: 'RANDOM_COLOR',
+            colors: actualColors,
+            index,
+          }
+      }
+
+      previousButton.addEventListener('click',() => {
+        store.dispatch(previousColor());
+      } );
+      nextButton.addEventListener('click',() => {
+        store.dispatch(nextColor());
+      } );
+
+      randomColorButton.addEventListener('click',() => {
+        store.dispatch(randomColor());
+      } );
+
+      store.subscribe(() => {
+      const actualColor = store.getState().colors[store.getState().index];
+
+      value.innerHTML = actualColor;
+      container.style.backgroundColor = actualColor;
+      })
+    </script>
+  </body>
+</html>
