@@ -1,0 +1,1 @@
+SELECT sqrt(36) AS RAIZ_36;

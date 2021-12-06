@@ -1,0 +1,1 @@
+SELECT 1 AS "Um", 2 AS "Dois", 3 AS "Tres";
