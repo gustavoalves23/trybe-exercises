@@ -1,0 +1,1 @@
+SELECT active, count(*) AS CONTAGEM FROM sakila.customer GROUP BY active;

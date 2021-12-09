@@ -1,0 +1,2 @@
+-- Escreva uma query que exiba a média salarial de cada JOB_ID , ordenando pela média salarial em ordem decrescente.
+SELECT AVG(salary) AS media, job_id FROM hr.employees GROUP BY job_id ORDER BY media DESC;

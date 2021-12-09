@@ -1,0 +1,1 @@
+SELECT IF (4 MOD 2 = 0, 'Par', 'Impar') AS 'Par ou Impar';

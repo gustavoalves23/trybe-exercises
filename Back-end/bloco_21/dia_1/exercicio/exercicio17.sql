@@ -1,0 +1,6 @@
+SELECT 
+    LAST_NAME, HIRE_DATE
+FROM
+    hr.employees
+WHERE
+    HIRE_DATE LIKE '1987-06%';

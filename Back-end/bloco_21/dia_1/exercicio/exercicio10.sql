@@ -1,0 +1,6 @@
+SELECT 
+    DEPARTMENT_ID, AVG(salary), COUNT(*)
+FROM
+    hr.employees
+GROUP BY DEPARTMENT_ID
+HAVING (COUNT(*) > 10);
