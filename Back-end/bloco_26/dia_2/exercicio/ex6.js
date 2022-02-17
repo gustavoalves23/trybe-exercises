@@ -12,5 +12,4 @@ const Nutela = {
     flavor: 'Nutela',
     slices: 4
 };
-
 console.log(Calabreza);

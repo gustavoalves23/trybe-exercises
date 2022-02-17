@@ -1,4 +1,4 @@
-type slices = 4|6|8;
+export type slices = 4|6|8;
 
 export interface Pizza {
   flavor:string,
@@ -17,3 +17,5 @@ const Nutela:Pizza = {
   flavor: 'Nutela',
   slices: 4
 }
+
+console.log(Calabreza);
