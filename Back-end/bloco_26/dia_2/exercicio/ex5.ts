@@ -1,0 +1,34 @@
+import Car, {Colors, Directions, Doors} from "./ex4";
+
+const car = new Car('FIAT', Colors.BLACK, 4);
+
+car.openTheDoor(Doors.DRIVER);
+car.closeTheDoor(Doors.DRIVER);
+car.turnOn();
+car.speedUp();
+car.speedDown();
+car.turn(Directions.LEFT);
+car.speedUp();
+car.speedDown();
+car.turn(Directions.RIGHT);
+car.speedUp();
+car.speedDown();
+car.turn(Directions.RIGHT);
+car.speedDown();
+car.stop();
+car.openTheDoor(Doors.BEHIND_RIDE);
+car.closeTheDoor(Doors.BEHIND_RIDE);
+car.speedUp();
+car.speedDown();
+car.turn(Directions.RIGHT);
+car.speedUp();
+car.speedDown();
+car.turn(Directions.LEFT);
+car.speedUp();
+car.speedDown();
+car.turn(Directions.RIGHT);
+car.speedDown();
+car.stop();
+car.openTheDoor(Doors.BEHIND_RIDE);
+car.closeTheDoor(Doors.BEHIND_RIDE);
+car.speedUp();
