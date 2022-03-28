@@ -1,0 +1,1 @@
+db.Books.find({status:'MEAP'},{title:true, authors:true, status:true}).limit(10)

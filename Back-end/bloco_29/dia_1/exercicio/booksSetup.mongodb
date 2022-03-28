@@ -1,0 +1,1 @@
+mongoimport -d Exercises -c Books --file ./books.json
