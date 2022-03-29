@@ -1,0 +1,4 @@
+db.restaurants.countDocuments({$or: [
+  {rating: {$gte: 6}},
+  {borough: 'Brooklyn'}
+]})

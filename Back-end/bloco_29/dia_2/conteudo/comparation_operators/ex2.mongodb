@@ -1,0 +1,3 @@
+db.restaurants.countDocuments({
+  cuisine: {$not: {$eq: 'American'}}
+})

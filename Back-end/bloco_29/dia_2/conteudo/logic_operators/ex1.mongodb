@@ -1,0 +1,4 @@
+db.restaurants.countDocuments({$or:[
+  {rating: {$not: {$lte: 5}}},
+  {rating: {$exists: false}}
+]})
